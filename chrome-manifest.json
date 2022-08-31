@@ -10,7 +10,8 @@
         "storage"
     ],
 
-    "action":{
+    "action":
+    {
 
         "default_popup": "main.html"
 
