@@ -26,18 +26,18 @@ function extractDataFromCell(element) {
 cells.forEach(element => {
     pairs.push(extractDataFromCell(element))
 
-    let btn = document.createElement('button')
-    btn.innerHTML = "Delete"
-    btn.classList.add("hide_item_class")
-    element.appendChild(btn)
+    // let btn = document.createElement('button')
+    // btn.innerHTML = "Delete"
+    // btn.classList.add("hide_item_class")
+    // element.appendChild(btn)
 });
 
-//console.log(pairs)
+console.log(pairs)
 
-const hideButtons = document.querySelectorAll(".hide_item_class")
-hideButtons.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        const parent = event.target.parentNode
-        console.log(extractDataFromCell(parent))
-    });
-});
+// const hideButtons = document.querySelectorAll(".hide_item_class")
+// hideButtons.forEach(btn => {
+//     btn.addEventListener('click', (event) => {
+//         const parent = event.target.parentNode
+//         console.log(extractDataFromCell(parent))
+//     });
+// });
