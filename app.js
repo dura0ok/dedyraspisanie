@@ -20,6 +20,16 @@ cells.forEach(element=> {
   }
   
   pairs.push(pair)
+
+  let btn = document.createElement('button')
+  btn.innerHTML = "Delete"
+  btn.classList.add("hide_item_class")
+  element.appendChild(btn)
 });
 
 console.log(pairs)
+
+const hideButtons = document.querySelectorAll("hide_item_class")
+hideButtons.forEach(btn => {
+  btn.addEventListener('click', () => {console.log("asd")});
+});
