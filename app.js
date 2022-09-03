@@ -84,6 +84,7 @@ blocks.forEach((element, index) => {
             cell.setAttribute("id", index);
             const unpackData = JSON.parse(localStorage.getItem("blocks"))
             cell.querySelector(".subject").innerText = unpackData[cell.closest("td").getAttribute("data-id")][cell.getAttribute("id")].name
+            cell.querySelector(".room a").innerText = unpackData[cell.closest("td").getAttribute("data-id")][cell.getAttribute("id")].name
             cell.querySelector(".subject").addEventListener("click", (e) => {
                 const target = e.target;
                 const targetCell = extractDataFromCell(target.closest(".cell"))
@@ -95,6 +96,18 @@ blocks.forEach((element, index) => {
                 localStorage.setItem("blocks", JSON.stringify(unpackData))
                 target.innerText = newTitle
 
+            })
+
+            cell.querySelector(".room a").addEventListener("click", (e) => {
+                const target = e.target;
+                const targetCell = extractDataFromCell(target.closest(".cell"))
+                const parentId = target.closest("td").getAttribute("data-id");
+                const id = target.closest(".cell").getAttribute("id")
+                const newRoom = prompt("Новое название");
+
+                unpackData[parentId][id].room = newRoom
+                localStorage.setItem("blocks", JSON.stringify(unpackData))
+                target.innerText = newRoom
             })
 
         })
