@@ -62,7 +62,9 @@ blocks.forEach((element, index) => {
                 const parentId = target.closest("td").getAttribute("data-id");
                 const newTitle = prompt("Новое название");
                 const unpackData = JSON.parse(localStorage.getItem("blocks"))
-                console.log(unpackData[parentId].findIndex(el => targetCell === el))
+                const cellID = unpackData[parentId].findIndex(el => el.name === targetCell.name)
+                unpackData[parentId][cellID].name = newTitle
+                localStorage.setItem("blocks", JSON.stringify(unpackData));
             })
         })
     }
