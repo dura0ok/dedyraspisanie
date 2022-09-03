@@ -84,7 +84,7 @@ blocks.forEach((element, index) => {
             cell.setAttribute("id", index);
             const unpackData = JSON.parse(localStorage.getItem("blocks"))
             cell.querySelector(".subject").innerText = unpackData[cell.closest("td").getAttribute("data-id")][cell.getAttribute("id")].name
-            cell.querySelector(".room a").innerText = unpackData[cell.closest("td").getAttribute("data-id")][cell.getAttribute("id")].name
+            cell.querySelector(".room a").innerText = unpackData[cell.closest("td").getAttribute("data-id")][cell.getAttribute("id")].room
             cell.querySelector(".subject").addEventListener("click", (e) => {
                 const target = e.target;
                 const targetCell = extractDataFromCell(target.closest(".cell"))
